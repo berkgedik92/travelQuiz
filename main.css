@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 70%;
+    height: 400px;
+    margin: 30px auto;
+    padding: 30px;
+    vertical-align: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin: 40px;
+}
+
+h2 {
+    margin: 20px auto;
+}
+
+.world-image {
+    border: 1px solid black;
+    background: blue;
+    border-radius: 50%;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    margin: 40px auto;
+}
+
+button[type="button"] {
+    margin: 40px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
