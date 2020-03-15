@@ -3,7 +3,7 @@
 let questionCount = 0;
 let correctCount = 0;
 let questionSet;
-const maxQuestions = 2;
+const maxQuestions = 5;
 const welcomeScreen = $("main").clone();
 
 //  WITH EVENT LISTENERS

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bellota|Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Bellota|Work+Sans&display=swap');
 
 *, *:before, *:after {
     box-sizing: border-box;
@@ -30,11 +30,10 @@ header {
 
 main {
     border: 1px solid #DADADA;
-    border-radius: 10px;
+    border-radius: 5px;
     background: rgb(201, 243, 255, 0.4);
     width: 65%;
-    min-height: 90%;
-    max-height: 90%;
+    height: 650px;
     margin: 0 auto 20px auto;
     padding: 20px 30px;
     text-align: center;
@@ -67,8 +66,9 @@ ul {
 }
 
 button[type="button"] {
+    font-family: "PT Sans" Helvetica, sans-serif;
+    font-weight: 400;
     border: 1   px solid rgb(197, 197, 197);
-    font-weight: 700;
     font-size: 20px;
     padding: 5px 20px;
     background-color: white;
@@ -90,7 +90,7 @@ li {
     list-style: none;
     text-align: center;
     border: 1px solid #DADADA;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px;
     padding: 10px;
 }
@@ -111,7 +111,7 @@ li:hover {
 .world-image {
     width: 600px;
     border: 5px solid white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .incorrect-answer {
@@ -145,11 +145,17 @@ li:hover {
 .result-message {
     font-size: 20px;
     padding: 10px 30px;
-    border-radius: 6px;
+    border-radius: 5px;
+}
+
+.feedback {
+    color: white;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .hidden {
-    display: none;
+    visibility: hidden;
 }
 
 .hidden-background {
