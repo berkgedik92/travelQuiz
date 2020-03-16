@@ -1,28 +1,32 @@
 function createQuestionHtml(selectedQuestion){
     const newQuestion = 
-        `<img class="question-image" src=${selectedQuestion.imageSrc} alt=${selectedQuestion.imageAlt}>
-        <h2>${selectedQuestion.question}</h2>\
-        <ul data-item-id="${selectedQuestion.id}">
-            <li>${selectedQuestion.options[0]}</li>
-            <li>${selectedQuestion.options[1]}</li>
-            <li>${selectedQuestion.options[2]}</li>
-            <li>${selectedQuestion.options[3]}</li>
-        </ul>\
-        <button type="button" class="js-next-button hidden">NEXT</button>`;
+        `<div class="image-container">\
+        <img class="question-image" src=${selectedQuestion.imageSrc} alt=${selectedQuestion.imageAlt}>\
+        </div>\
+        <form data-item-id="${selectedQuestion.id}">\
+            <h2 class="question">${selectedQuestion.question}</h2>\
+            <input class="option" type="button" value="${selectedQuestion.options[0]}">
+            <input class="option" type="button" value="${selectedQuestion.options[1]}">
+            <input class="option" type="button" value="${selectedQuestion.options[2]}">
+            <input class="option" type="button" value="${selectedQuestion.options[3]}">
+        </form>\
+        <button type="button" class="game-button next-button js-next-button hidden">NEXT</button>`;
     return newQuestion;
-}
+} 
 
 function createFinalQuestionHtml(selectedQuestion){
     const newQuestion = 
-        `<img class="question-image" src=${selectedQuestion.imageSrc} alt=${selectedQuestion.imageAlt}>
-        <h2>${selectedQuestion.question}</h2>\
-        <ul data-item-id="${selectedQuestion.id}">
-            <li>${selectedQuestion.options[0]}</li>
-            <li>${selectedQuestion.options[1]}</li>
-            <li>${selectedQuestion.options[2]}</li>
-            <li>${selectedQuestion.options[3]}</li>
-        </ul>\
-        <button type="button" class="js-final-button hidden">SEE SCORE</button>`;
+        `<div class="image-container">\
+        <img class="question-image" src=${selectedQuestion.imageSrc} alt=${selectedQuestion.imageAlt}>\
+        </div>\
+        <form data-item-id="${selectedQuestion.id}">\
+            <h2 class="question">${selectedQuestion.question}</h2>\
+            <input class="option" type="button" value="${selectedQuestion.options[0]}">
+            <input class="option" type="button" value="${selectedQuestion.options[1]}">
+            <input class="option" type="button" value="${selectedQuestion.options[2]}">
+            <input class="option" type="button" value="${selectedQuestion.options[3]}">
+        </form>\
+        <button type="button" class="game-button next-button js-final-button hidden">SEE SCORE</button>`;
     return newQuestion;
 }
 
@@ -42,11 +46,11 @@ function createFinishHtml(){
         alt="FINAL SCORE. Planet Earth with lots of famous landmarks like the Eiffel Tower and the Statue of Liberty">\
         <h1 class="score">${correctCount} out of ${maxQuestions}</h1>\
         <h2 class="feedback">${feedback}</h2>\
-        <button type="button" class="js-new-game-button">PLAY AGAIN</button>`;
+        <button type="button" class="play-again-button js-new-game-button">PLAY AGAIN</button>`;
 }
 
 function createWelcomeHtml(){
     return '<h1>Welcome to the travel and culture quiz!</h1>\
     <img class="earth-image" src="https://travel-quiz.s3-us-west-1.amazonaws.com/earth.png" alt="Planet Earth">\
-    <button type="button" class="js-start-button">START QUIZ</button>';
+    <button type="button" class="start-button game-button js-start-button">START QUIZ</button>';
 }

@@ -6,7 +6,7 @@ let questionSet;
 const maxQuestions = 5;
 const welcomeScreen = $("main").clone();
 
-//  WITH EVENT LISTENERS
+//  EVENT LISTENERS
 function handleGetNewQuestion(){
     $('main').on('click', '.js-next-button', (event) => {
         renderQuestion();
@@ -32,14 +32,17 @@ function handleClickNewGame(){
 
 function handleUserAnswer(){
     // must make links not clickable after clicking
-    $('main').on('click', 'li', (event) => {
+    $('main').on('click', 'input[type="button"]', (event) => {
         // Remove hover and clicking functionality on answered question
-        $("main li").css("pointer-events","none");
+        $("main input[type='button']").css("pointer-events","none");
+        $("main input[type='button']").prop("disabled",true);
 
-        const selectedAnswer = $(event.currentTarget).text().toLowerCase();
-        const id = $(event.currentTarget).parent().data('item-id');
+        const selectedAnswer = $(event.currentTarget).val().toLowerCase();
+        const id = $(event.currentTarget).parent().data("itemId");
         const correctAnswer = getCorrectAnswer(id);
         const answerCorrect = correctAnswer === selectedAnswer;; 
+        console.log(`correct answer is: ${correctAnswer}`);
+        console.log(`selected answer is: ${selectedAnswer}`);
         if (answerCorrect){
             console.log("User answer was correct.");
             handleCorrectAnswer(correctAnswer);
@@ -53,22 +56,22 @@ function handleUserAnswer(){
     });
 }   
 
-// WITHOUT EVENT LISTENERS
+// NON-EVENT LISTENERS
 function getCorrectAnswer(questionId){
     const curQuestion = QUESTIONS.find(item => item.id === questionId);
     return curQuestion.correctAnswer;
 }
 
 function initialiseQuestions(){
-    // initialise and populate question array
     questionCount = 0;
     correctCount = 0;
     questionSet = [...QUESTIONS];
 }
 
 function handleCorrectAnswer(correctAnswer){
-    $( "li" ).each(function() {
-        if ($(this).text().toLowerCase() === correctAnswer){
+    console.log("I am here");
+    $("input[type='button']").each(function() {
+        if ($(this).val().toLowerCase() === correctAnswer){
             $(this).addClass("correct-answer");
         }
         else {
@@ -81,11 +84,11 @@ function handleCorrectAnswer(correctAnswer){
 }
 
 function handleIncorrectAnswer(selectedAnswer, correctAnswer){
-    $( "li" ).each(function() {
-        if ($(this).text().toLowerCase() === selectedAnswer){
+    $("input[type='button']").each(function() {
+        if ($(this).val().toLowerCase() === selectedAnswer.toLowerCase()){
             $(this).addClass("incorrect-answer");
         }
-        else if ($(this).text().toLowerCase() === correctAnswer){
+        else if ($(this).val().toLowerCase() === correctAnswer.toLowerCase()){
             $(this).addClass("correct-answer");
         }
         else {
