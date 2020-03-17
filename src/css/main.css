@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da+2|Concert+One|Open+Sans+Condensed:300|PT+Sans&display=swap');
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	font-family: "Concert One", Helvetica, sans-serif;
+}
+
+body {
+	background: url(https://travel-quiz.s3-us-west-1.amazonaws.com/stars.jpeg) fixed;
+	background-color: rgb(22, 20, 22);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 100%;
+	min-height: 100vh;
+}
+
+header {
+	font-size: 1.5em;
+	color: white;
+	font-weight: 700;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	border: 1px solid #DADADA;
+	border-radius: 5px;
+	background: rgb(201, 243, 255, 0.4);
+	width: 85%;
+	height: 550px;
+	margin: 0 auto 20px auto;
+	padding: 20px 30px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+h1 {
+	font-size: 2.5em;
+	margin: 0;
+	width: 300px;
+	color: white;
+}
+
+h4 {
+	margin: 5;
+}
+
+.option {
+	background: rgba(233, 248, 253, 0.8);
+	font-family: "Baloo Da 2", Helvetica, sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	width: 250px;
+	list-style: none;
+	text-align: center;
+	border: 2px solid #DADADA;
+	border-radius: 5px;
+	margin: 5px;
+	padding: 0px;
+}
+
+.option:hover {
+	background-color: white;
+	cursor: pointer;
+}
+
+.next-button:focus,
+input:focus {
+	outline-color: rgb(31, 19, 44);
+}
+
+.play-again-button:focus,
+.start-button:focus {
+	outline-color: #FFF;
+}
+
+.earth-image {
+	width: 300px;
+}
+
+.score {
+	font-size: 2em;
+	padding: 30px;
+}
+
+.header-counts {
+	margin: 5px;
+}
+
+.question {
+	font-size: 20px;
+	padding: 10px 0;
+	margin: 5px auto 5px auto;
+	font-weight: 300;
+	width: 100%;
+}
+
+.game-button,
+.play-again-button {
+	font-family: "PT Sans" Helvetica, sans-serif;
+	font-weight: 400;
+	border: 1 px solid rgb(197, 197, 197);
+	font-size: 20px;
+	padding: 5px 20px;
+	background-color: white;
+	margin: 10px 40px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.next-button {
+	margin-top: 20px;
+}
+
+button[type="button"]:hover {
+	background-color: rgba(233, 248, 253, 0.8);
+}
+
+.image-container {
+	background-size: contain;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.question-image {
+	object-fit: fill;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid rgb(6, 5, 39);
+	margin-top: 20px;
+}
+
+.world-image {
+	width: 350px;
+	border: 3px solid white;
+	border-radius: 5px;
+}
+
+.incorrect-answer {
+	color: red;
+	border: 2px solid red;
+	background-color: rgb(243, 178, 178);
+}
+
+.correct-answer {
+	color: rgb(3, 199, 3);
+	border: 2px solid rgb(3, 199, 3);
+	background-color: rgb(184, 255, 184);
+}
+
+.grey-out {
+	color: rgb(228, 228, 228);
+	border: 2px solid rgb(228, 228, 228);
+	background-color: rgb(255, 255, 255);
+}
+
+.result-message {
+	font-size: 20px;
+	padding: 10px 30px;
+	border-radius: 5px;
+}
+
+.feedback {
+	font-family: "Baloo Da 2", Helvetica, sans-serif;
+	font-size: 1.5em;
+	color: white;
+	margin-top: 0;
+	padding-top: 0;
+	width: 350px;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.hidden-background {
+	background: none;
+	border: none;
+}
+
+@media only screen and (min-width: 600px) {
+	main {
+		height: 675px;
+		width: 65%;
+	}
+	header {
+		justify-content: space-evenly;
+	}
+	.earth-image {
+		width: 400px;
+	}
+	h1 {
+		margin: 0 40px;
+		width: auto;
+	}
+	.question-image {
+		height: 180px;
+		width: 180px;
+		border-width: 10px;
+		margin: 10px;
+	}
+	.world-image {
+		width: 600px;
+		border: 5px solid white;
+	}
+	.feedback {
+		width: auto;
+	}
+	.question {
+		font-size: 1.5em;
+	}
+	.option {
+		font-size: 20px;
+		width: 225px;
+		padding: 5px;
+	}
+	.start-button {
+		font-size: 30px;
+	}
+}
+
+@media only screen and (min-width: 850px) {
+	header {
+		flex-direction: row;
+	}
+	.question {
+		font-size: 2em;
+	}
+	.option {
+		font-size: 22px;
+		width: 400px;
+	}
+	.earth-image {
+		width: 450px;
+	}
+}
