@@ -1,3 +1,5 @@
+// All images are AWS-hosted
+
 const QUESTIONS = [
     {
         question: "What is the capital city of Scotland?",
